@@ -1,0 +1,132 @@
+<div data-role="page" id="home">
+    <div data-role="header" class="header">
+      <div class="block-header">
+        <img class="fixed-size-img-logo" src="/img/logo-car.png">
+        <div class="block-header-bottom">
+          <span class="main-dark-color size-title-bold">Pharm</span>
+          <span class="secondary-color size-title-bold">SAP</span>
+        </div>
+      </div>
+      <div class="div-right-header">
+          <div id="username-btn" class="div-right-button">
+              <p class="main-dark-color">A PROPOS</p>
+          </div>
+          <div id="div-deconnect-button" class="div-right-button">
+              <a title="Quitter l'application'">
+                <img class="header-button" src="/img/picto_deconnecter.png" height="35px">
+              </a>
+          </div>
+      </div>
+    </div>
+    <div class="horizontal-line-header"></div>
+    <div class="subtitle-box"><span class="main-dark-color size-title-bold subtitle">Sorties de stock</span></div>
+    <div data-role="content" class="content">
+      <div>
+        <div class="deux-col">
+          <div class="labels"><span>Origine</span></div>
+          <select name="origine" id="origine-select">
+            <option value="">--choisir--</option>
+          </select>
+        </div>
+        <div class="deux-col">
+          <div class="labels"><span>Destination</span></div>
+          <select name="destination" id="destination-select">
+            <span id="destination-search"></span>
+            <option>--choisir--</option>
+          </select>
+        </div>
+      </div>
+      <div class="search"><input type="search" id="OrigineInput"></div>
+      <table>
+        <thead>
+            <tr>
+                <th>Produit</th>
+                <th>Lot/Série</th>
+                <th>Date</th>
+                <th>Qté</th>
+                <th>Qté Sortie</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Produit A</td>
+                <td>12345</td>
+                <td>04/05/2004</td>
+                <td>100</td>
+                <td><input type="number" class="sortieInput" value="0"></td>
+            </tr>
+            <tr>
+                <td>Produit B</td>
+                <td>67890</td>
+                <td>18/05/2012</td>
+                <td>50</td>
+                <td><input type="number" class="sortieInput" value="0"></td>
+            </tr>
+        </tbody>
+      </table>
+      <input type="file" id="csvFile" accept=".csv">
+      <a href="/pages/product.html" class="" data-role="button">Connexion</a>
+    </div>
+    <div data-role="footer" data-id="foo1" data-position="fixed">
+      <div data-role="navbar">
+        <div class="horizontal-line-header"></div>
+      </div>
+      <div class="navbar-under">
+        <a href="/pages/home.html" data-ajax="false" class="btn-footer"><img src="/img/picto_annuler.png" width="45px"></a>
+        <a href="/pages/product.html" data-ajax="false" class="btn-footer"><img src="/img/picto_valider.png" width="45px"></a>
+      </div>
+    </div>
+    <script>
+        $(document).on('pagecreate', '#home', function() {
+          $('.ui-input-text').css('width', '50px');
+        }); 
+
+        $(document).ready(function() {
+            $('#csvFile').on('change', function(event) {
+                var file = event.target.files[0];
+                if (file) {
+                    var reader = new FileReader();
+                    reader.onload = function(e) {
+                        var text = e.target.result;
+                        var lines = text.split("\n");
+
+                        // Vider le tableau avant de l'alimenter
+                        $("table tbody").empty();
+
+                        // Parcourir chaque ligne du CSV
+                        lines.forEach(function(line, index) {
+                            if (line.trim() !== "") { // Ignorer l'entête
+                                var columns = line.split(";"); // Utilisation du point-virgule comme séparateur
+
+                                // Vérifie qu'il y a au moins 5 colonnes
+                                if (columns.length >= 5) {
+                                    var row = "<tr>";
+                                    var date = columns[5].trim();
+                                    if (date.length === 8 && !isNaN(date)) {
+                                        let jour = date.substring(6, 8);
+                                        let mois = date.substring(4, 6);
+                                        let annee = date.substring(0, 4);
+                                        date = `${jour}/${mois}/${annee}`;
+                                    }
+                                    columns[0] = columns[0].replace(/^"/, '');
+                                    columns[13] = columns[13].replace(/"$/, '');
+                                    row += "<td>" + columns[0].trim() + "</td>";
+                                    row += "<td>" + columns[3].trim() + "</td>";
+                                    row += "<td>" + date + "</td>";
+                                    row += "<td>" + columns[13].trim() + "</td>";
+                                    row += "<td>" + '<input type="number" class="sortieInput" value="0">' + "</td>";
+                                    row += "</tr>";
+                                    $("table tbody").append(row);
+                                }
+                            }
+                        });
+
+                        $('.sortieInput').css('width', '50px');
+                        $('.sortieInput').css('color', '#000C92');
+                    };
+                    reader.readAsText(file);
+                }
+            });
+        });
+    </script>
+</div>
