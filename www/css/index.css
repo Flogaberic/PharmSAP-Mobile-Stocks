@@ -1,0 +1,376 @@
+@import url('https://fonts.cdnfonts.com/css/avenir');
+@import url('https://fonts.cdnfonts.com/css/avenir-lt-pro');
+
+
+body{
+    background-color: #edfafaBB !important;
+    font-family: 'Avenir', sans-serif;
+}
+
+.main-dark-color{
+    color: #00A699;
+}
+
+.secondary-color{
+    color: #E42726;
+}
+
+.header-top{
+    height: 60px;
+    font-family: 'Avenir LT Pro', sans-serif;
+    display: flex;
+    justify-content: space-between;
+}
+
+.block-header, .div-right-header{
+    height: 60px;
+    display: flex;
+    margin-left: 8px;
+    font-family: 'Avenir LT Pro', sans-serif;
+}
+
+#sys_ws_login_form{
+    background: linear-gradient(white, #00A699);
+    padding: 15px;
+    width: 65%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 200px;
+}
+
+.block-header-bottom {
+    display: flex;
+    align-items: center;
+    position: relative;
+    font-size: 30px;
+    font-weight: 900;
+    margin-left: 8px;
+    margin-bottom: -30px;
+}
+
+.div-right-header{
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 4px;
+    margin-bottom: -15px;
+}
+
+.subtitle{
+    display: flex;
+    align-items: center;
+    margin-top: 7px;
+    margin-left: 5px;
+    color: #000C92;
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.subtitle-box{
+    display: flex;
+    justify-content: center;
+}
+
+.div-right-button{
+    display: flex;
+    align-items: center;
+    color: #00A699;
+    margin-right: 8px;
+    margin-top: 8px;
+}
+
+.horizontal-line-header{
+    border-bottom: 3px solid #00A699;
+}
+
+.horizontal-line-content{
+    border-bottom: 1px solid #00A699;
+}
+
+#username-btn{
+    margin-bottom: -18px;
+}
+
+#div-deconnect-button{
+    margin-bottom: -10px;
+}
+
+.labels{
+    display: flex;
+    align-items: center;
+    margin-top: 7px;
+    margin-bottom: 7px;
+    flex: 1;
+}
+
+.ui-input-search{
+    width: 20%;
+}
+
+.ui-select{
+    border-color: #000C92;
+    width: 90%;
+    flex: 4;
+}
+
+
+.select2-container--default .select2-selection--single {
+    border-color: #000C92;
+}
+
+option{
+    text-align: center;
+    color: #000C92;
+}
+
+#origine-select, #destination-select{
+    flex: 4;
+}
+
+.search{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.navbar-under {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Espace entre les boutons */
+    padding: 10px;
+    background-color: #edfafa; /* Change la couleur si besoin */
+    border-top: 1px solid #ccc; /* Petite bordure en haut pour séparer du contenu */
+}
+
+.btn-footer{
+    background-color: white;
+    border: 2px solid #00A699;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: -40px;
+}
+
+[data-role="footer"] {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; 
+}
+
+
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    overflow: hidden;
+    border: none; /* Suppression du contour extérieur */
+}
+
+th:first-child {
+    border-left: none; /* Suppression bordure gauche */
+}
+
+th:last-child {
+    border-right: none; /* Suppression bordure droite */
+}
+
+tr:last-child td:first-child {
+    border-bottom-left-radius: 10px;
+    border-left: none; /* Suppression bordure gauche */
+}
+
+tr:last-child td:last-child {
+    border-bottom-right-radius: 10px;
+    border-right: none; /* Suppression bordure droite */
+}
+
+tr td:last-child {
+    border-right: none; /* Suppression bordure droite */
+}
+
+tr td:first-child {
+    border-left: none; /* Suppression bordure gauche */
+}
+
+tr:first-child th {
+    border-top: none; /* Suppression bordure supérieure */
+}
+
+tr:last-child td {
+    border-bottom: none; /* Suppression bordure inférieure */
+}
+
+tr td:last-child {
+    justify-content: center;
+}
+
+tr:nth-child(even){
+    background-color: #F3F7F6;
+}
+
+th, td {
+    border: 1.5px solid #00A69960;
+    border-bottom: 0.5px solid #00A69960;
+    border-top: 0.5px solid #00A69960;
+    padding: 10px;
+}
+
+.libelle, .lot{
+    text-align: left;
+}
+
+.date, .qte, .sortieInput{
+    text-align: right;
+}
+
+th {
+    background-color: #00a699;
+    color: white;
+    font-weight: bold;
+}
+
+td {
+    color: #000C92;
+}
+
+#disclaimer{
+    text-align: center;
+}
+
+.content{
+    border: 3px solid #00a69860;
+    background-color: white;
+    margin: 15px;
+    margin-top: 35px;
+    border-radius: 10px;
+    max-height: 77vh;
+    color: #000C92;
+}
+
+.content-login{
+    color: #000C92;
+}
+
+p{
+    color: #000C92;
+}
+
+.deux-col{
+    display: flex;
+}
+
+/* Conteneur principal du select stylisé */
+.select2-container--default .select2-selection--single {
+    background-color: #f0f0f0;
+    border: 1px solid #000C92;
+    border-radius: 0.3125em;
+    height: 40px;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+/* Flèche dropdown */
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+    top: 7px;
+    right: 10px;
+}
+
+/* Texte sélectionné */
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+    color: #333;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Menu déroulant */
+.select2-container--default .select2-results__option {
+    padding: 10px;
+    font-size: 15px;
+    text-align: center;
+    color: #000C92;
+}
+
+/* Option survolée */
+.select2-container--default .select2-results__option--highlighted {
+    background-color: #00a699 !important;
+    color: white;
+}
+
+.select2-container--default .select2-search--dropdown .select2-search__field {
+    background-color: #fff; /* Ta couleur */
+    border: 1px solid #00a699; /* Optionnel : bordure */
+}
+
+
+
+.validation{
+    margin: 15px;
+    justify-content: right;
+    align-items: center;
+    width: 70px;
+    display: flex;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.disconnect{
+    background-color: #fff0;
+}
+  
+#login-box{
+    margin-top: 35%;
+    background: linear-gradient(white, #00A699);
+    margin-left: 20%;
+    margin-right: 20%;
+    border-style: solid;
+    border-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#login-form{
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+#version{
+    text-align: end;
+    margin-right: 5%;
+}
+
+.alert {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #00A699;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-weight: bold;
+  font-family: sans-serif;
+  z-index: 9999;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.alert.hidden {
+  opacity: 0;
+  pointer-events: none;
+}

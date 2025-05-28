@@ -1,0 +1,76 @@
+<div data-role="page" id="home">
+    <div data-role="header" class="header">
+      <div class="header-top">
+        <div class="block-header">
+          <img class="fixed-size-img-logo" src="/img/logo-car.png">
+          <div class="block-header-bottom">
+            <span class="main-dark-color size-title-bold">Pharm</span>
+            <span class="secondary-color size-title-bold">SAP</span>
+          </div>
+        </div>
+        <div class="div-right-header">
+            <div id="username-btn" class="div-right-button">
+                <span class="main-dark-color" id="user-name"></span>
+            </div>
+            <div id="div-deconnect-button" class="div-right-button">
+                <button title="Quitter l'application" class="nav-btn disconnect" data-target="login.html">
+                  <img class="header-button" src="/img/picto_deconnecter.png" height="35px">
+                </button>
+            </div>
+        </div>
+      </div>
+      <div class="header-bottom">
+        <div class="horizontal-line-header"></div>
+        <div class="subtitle-box"><span class="main-dark-color size-title-bold subtitle">Sorties de stock</span></div>
+      </div>
+    </div>
+    <div data-role="content" class="content" id="content">
+      <div id="alert-success" class="alert hidden">
+        ✅ Données envoyées avec succès
+      </div>
+      <div>
+        <div class="deux-col">
+          <div class="labels"><span>Origine</span></div>
+          <select name="origine" id="origine-select" data-role="none">
+            <option value="">--choisir--</option>
+          </select>
+        </div>
+        <div class="deux-col">
+          <div class="labels"><span>Destination</span></div>
+          <select name="destination" id="destination-select" data-role="none">
+            <option>--choisir--</option>
+          </select>
+        </div>
+      </div>
+      <div id="produitsContainer">
+        <div class="search">
+          <div class="validation" id="bouton_maj"><img src="/img/picto_valider.png" width="25px"></div>
+          <input type="search" id="OrigineInput">
+        </div>
+        <table id="produitsTable">
+          <thead>
+              <tr>
+                  <th>Produit</th>
+                  <th>Lot/Série</th>
+                  <th>Date</th>
+                  <th>Qté</th>
+                  <th>Qté sortie</th>
+              </tr>
+          </thead>
+          <tbody id="produitsListe" class="list">
+          </tbody>
+        </table>
+        <p id="disclaimer">Aucun lieu sélectionné</p>
+      </div>
+    </div>
+    <div data-role="footer" data-id="foo1" data-position="fixed">
+      <div data-role="navbar">
+        <div class="horizontal-line-header"></div>
+      </div>
+      <div class="navbar-under">
+        <button class="btn-footer"><img src="/img/consulter.png" width="45px"></button>
+        <button class="btn-footer" id="btn_annuler"><img src="/img/picto_annuler.png" width="45px"></button>
+        <button class="btn-footer" id="btn_valider"><img src="/img/picto_valider.png" width="45px"></button>
+      </div>
+    </div>
+</div>
