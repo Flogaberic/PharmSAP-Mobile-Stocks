@@ -1,4 +1,4 @@
-<div data-role="page" id="home">
+<div data-role="page" id="home" data-dom-cache="false">
     <div data-role="header" class="header">
       <div class="header-top">
         <div class="block-header">
@@ -68,9 +68,9 @@
         <div class="horizontal-line-header"></div>
       </div>
       <div class="navbar-under">
-        <button class="btn-footer"><img src="/img/consulter.png" width="45px"></button>
+        <button class="btn-footer" id="btn_consulter"><img src="/img/consulter.png" id="picto_consulter" width="45px"></button>
         <button class="btn-footer" id="btn_annuler"><img src="/img/picto_annuler.png" width="45px"></button>
-        <button class="btn-footer" id="btn_valider"><img src="/img/picto_valider.png" width="45px"></button>
+        <button class="btn-footer nav-btn" id="btn_valider" data-target="home.html"><img src="/img/picto_valider.png" width="45px"></button>
       </div>
     </div>
 </div>

@@ -247,7 +247,7 @@ td {
     margin: 15px;
     margin-top: 35px;
     border-radius: 10px;
-    max-height: 77vh;
+    max-height: 76vh;
     color: #000C92;
 }
 
@@ -373,4 +373,10 @@ input[type=number] {
 .alert.hidden {
   opacity: 0;
   pointer-events: none;
+}
+
+.btn-custom-green {
+    background-color: #00a699 !important;
+    color: white !important;
+    border: none !important;
 }

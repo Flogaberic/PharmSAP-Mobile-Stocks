@@ -18,10 +18,14 @@ const Login = {
         const token_local = "9e605ac932b6ada126aeaa3f1f782b579d00d4419b2e45b8acd50c97eec40a2256dffc95300aaa949183c4de0d5ded35e6c12fb89afe1b922fcd7ccb";
         const token_prod = "9e605ac932b6ada126aeaa3f1f782b579d00d4419b2e45b8acd50c97eec40a2256dffc95300aaa949183c4de0d5ded35e6c12fb89afe1b922fcd7ccb";
 
-        fetch("http://127.0.0.1:8001/api/login", {
+        const api_locale = "http://127.0.0.1:8000/api";
+        const api_prod = "https://pharmsapdev.apropos-fr.com/api";
+
+
+        fetch(api_prod + "/login", {
             method: "POST",
             headers: {
-                "Authorization": "Bearer " + token_local,
+                "Authorization": "Bearer " + token_prod,
                 "Content-Type": "application/json",
             },
             body: JSON.stringify({pseudo, mdp_appmob}),
